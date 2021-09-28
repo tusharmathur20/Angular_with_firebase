@@ -17,7 +17,7 @@ winnerList:any
   getWinners(){
     this.service.getAllWinners().subscribe(res=>{
       this.winnerList=res;
-      console.log(res)
+      // console.log(res)
     })
     
   }

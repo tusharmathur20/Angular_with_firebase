@@ -23,10 +23,10 @@ export class UsersComponent implements OnInit,AfterViewInit {
 
   constructor(private firebase:UserService,public dialog:MatDialog) { }
   displayedColumns: string[] = [ 'Name', 'Age', 'Scores','Action'];
-  public dataSource = new MatTableDataSource<User>();
+  dataSource = new MatTableDataSource<User>();
 
   ngAfterViewInit(): void {
-    // console.log(this.sort)
+   
     this.dataSource.sort=this.sort
   }
   ngOnInit(): void {
@@ -37,8 +37,8 @@ export class UsersComponent implements OnInit,AfterViewInit {
 
   getAllUsers(){
     this.firebase.ReadFunctionality().subscribe(res=>{
-      console.log(res);
-    this.tableData=res;
+      // console.log(res);
+    this.dataSource.data=res as User[];
       
     })
   }
@@ -47,6 +47,7 @@ export class UsersComponent implements OnInit,AfterViewInit {
    const a=this.dialog.open(DialogComponent);
    
   a.componentInstance.addWinners(data)
+  
   
    
   

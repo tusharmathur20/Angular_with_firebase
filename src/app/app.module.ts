@@ -19,6 +19,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environments/environment';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatSortModule } from '@angular/material/sort';
+import { CommonModule } from '@angular/common'; 
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatDialogModule,
     FormsModule,
     MatSortModule,
+    CommonModule,
     
    
 
